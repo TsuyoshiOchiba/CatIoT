@@ -1,0 +1,45 @@
+{
+    "version":1,
+    "disable_existing_loggers": false,
+    "formatters": {
+      "simple": {
+        "format": "%(asctime)s.%(msecs)03d %(process)d %(module)s:%(lineno)s %(funcName)s [%(levelname)s]: %(message)s",
+        "datefmt": "%Y/%m/%d %H:%M:%S"
+      }
+    },
+  
+    "handlers": {
+      "timeRotatingFileHandler": {
+        "class": "logging.handlers.TimedRotatingFileHandler",
+        "level": "DEBUG",
+        "formatter": "simple",
+        "filename": "app.log",
+        "encoding": "utf-8",
+        "when": "D",
+        "backupCount": 60
+      },
+      "errorTimeRotatingFileHandler": {
+        "class": "logging.handlers.TimedRotatingFileHandler",
+        "level": "ERROR",
+        "formatter": "simple",
+        "filename": "err.log",
+        "encoding": "utf-8",
+        "when": "D",
+        "backupCount": 30
+      }
+    },
+  
+    "loggers": {
+      "appLogger": {
+        "level": "DEBUG",
+        "handlers": ["timeRotatingFileHandler"]
+      },
+      "errLogger": {
+        "level": "ERROR",
+        "handlers": ["errorTimeRotatingFileHandler"]
+      }
+    },
+    "root": {
+      "level": "ERROR"
+    }
+  }
