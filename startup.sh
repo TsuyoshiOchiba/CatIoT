@@ -1,6 +1,3 @@
 #!/bin/bash
 
-cd /
-source env/bin/activate
-cd env/
-python3 startprocess.py
+/env/bin/python3 /env/startprocess.py

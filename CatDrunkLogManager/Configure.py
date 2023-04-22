@@ -6,7 +6,7 @@ import configparser
 class Configure:
     """ 設定ファイルパス
     """
-    INI_FILE_PATH = './config.ini'
+    INI_FILE_PATH = '/env/config.ini'
     """ 文字コード
     """
     INI_ENCODE = 'UTF-8'
