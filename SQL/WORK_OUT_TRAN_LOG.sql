@@ -23,7 +23,7 @@ ORDER BY
 LIMIT
   1 OFFSET 1; 
 
-SET $limit_over_weight = $before_weight -10;
+SET $limit_over_weight = $before_weight -5;
 SET $limit_low_weight = $before_weight - 300;
 
 IF $limit_low_weight < NEW.LOG_WEIGHT AND NEW.LOG_WEIGHT < $limit_over_weight THEN 
